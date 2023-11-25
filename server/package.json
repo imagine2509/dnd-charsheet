@@ -1,0 +1,54 @@
+{
+    "proxy": "http://localhost:5173/",
+    "name": "dnd-charsheet",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js --ignore ./sessions --ext js,jsx,json",
+      "db-seed": "npx sequelize-cli db:seed:all",
+      "db-seed-undo": "npx sequelize db:seed:undo:all",
+      "db-create": "npx sequelize db:create",
+      "db-drop": "npx sequelize db:drop",
+      "db-migrate": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@babel/core": "^7.22.9",
+      "@babel/preset-env": "^7.22.9",
+      "@babel/preset-react": "^7.22.5",
+      "@babel/register": "^7.22.5",
+      "bcrypt": "^5.1.0",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.3.1",
+      "express": "^4.18.2",
+      "express-session": "^1.17.3",
+      "express-validator": "^7.0.1",
+      "jsonwebtoken": "^9.0.2",
+      "morgan": "^1.10.0",
+      "pg": "^8.11.3",
+      "pg-hstore": "^2.3.4",
+      "prop-types": "^15.8.1",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "regjsgen": "^0.8.0",
+      "sequelize": "^6.32.1",
+      "sequelize-cli": "^6.6.1",
+      "session-file-store": "^1.5.0"
+    },
+    "devDependencies": {
+      "eslint": "^8.45.0",
+      "eslint-config-airbnb": "^19.0.4",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-plugin-import": "^2.27.5",
+      "eslint-plugin-jsx-a11y": "^6.7.1",
+      "eslint-plugin-react": "^7.33.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "nodemon": "^3.0.1"
+    }
+  }
+  
