@@ -1,0 +1,77 @@
+header {
+  position: relative;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+  border-bottom: 1px solid black;
+}
+header > * {
+  z-index: 100;
+}
+header::before {
+  content: '';
+  position: absolute;
+  background-image: url('/img/bg.jpg');
+  background-size: contain;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.25;
+}
+.logoField {
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.navUl {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding-right: 15px;
+}
+.logoImg {
+  height: 80px;
+}
+#navbar-character-button {
+  padding: 5px;
+  width: 250px;
+
+  border: 1px solid black;
+  border-radius: 8px;
+
+  background-color: transparent;
+}
+#navbar-character-button:hover {
+  cursor: pointer;
+}
+.navItem {
+  list-style-type: none;
+
+  color: black;
+}
+.navItem + .navItem {
+  margin-left: 10px;
+}
+.navLink {
+  padding: 5px;
+  width: max-content;
+
+  border: 1px solid black;
+  border-radius: 8px;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+.navLink,
+.navLink:visited,
+.stringLogo,
+.stringLogo:visited {
+  text-decoration: none;
+  color: black;
+}

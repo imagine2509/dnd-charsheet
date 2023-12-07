@@ -6,29 +6,26 @@ import styles from './header.styles.module.scss'
 const Header = () => {
     const isAuthorized = false
     const NavBar = withAuth({
-        isAuthorized, components: {
-            ComponentForAuthorized: NavbarWithAuth, ComponentForUnauthorized: NavbarNoAuth
-        }
+        isAuthorized,
+        components: {
+            ComponentForAuthorized: NavbarWithAuth,
+            ComponentForUnauthorized: NavbarNoAuth,
+        },
     })
     return (
         <header className={styles.header}>
-            <div className='logo-field'>
-                <a href='/'>
-                    <img src='/img/logo.png' alt='logo' id='logo' />
-                </a>
-                <a className='str-logo' href='/'>
-                    <h1>DnD Character Sheet</h1>
-                </a>
+            <div className={styles.logoField}>
+                <img src='/img/logo.png' alt='logo' className={styles.logoImg} />
+                <h1 className={styles.stringLogo}>DnD Character Sheet</h1>
             </div>
             <div className={styles.characterButtonContainer}>
-                <button
-                    id='navbar-character-button'
-                    type='submit'
-                    className='js-open-modal'>
+                <button id='navbar-character-button' type='submit'>
                     Choose Character
                 </button>
             </div>
-            <NavBar />
+            <nav className={styles.navMenuContainer}>
+                <NavBar />
+            </nav>
         </header>
     )
 }

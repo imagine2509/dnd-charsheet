@@ -1,26 +1,20 @@
-import { Menu, MenuProps } from "antd";
-import { useState } from "react";
+import styles from '../header.styles.module.scss'
+
 
 const NavbarNoAuth = () => {
-    const [current, setCurrent] = useState('login');
-
-    const onClick: MenuProps['onClick'] = (e) => {
-        setCurrent(e.key);
-    };
-
-    const items: MenuProps['items'] = [
-        {
-            label: 'Login',
-            key: 'login',
-        },
-        {
-            label: 'Register',
-            key: 'register',
-        },
-
-    ]
     return (
-        <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+        <ul className={styles.navUl}>
+            <li className={styles.navItem}>
+                <button className={styles.navLink} id='login-link'>
+                    Login
+                </button>
+            </li>
+            <li className={styles.navLink}>
+                <button className={styles.navLink} id='reg-link'>
+                    Register
+                </button>
+            </li>
+        </ul>
     )
 }
 
