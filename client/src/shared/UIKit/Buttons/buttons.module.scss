@@ -1,0 +1,13 @@
+@import '../fonts/fonts.scss';
+
+.pButton {
+  padding: 5px;
+  width: max-content;
+
+  border: 1px solid black;
+  border-radius: 8px;
+
+  background-color: transparent;
+  cursor: pointer;
+  font-family: $primary_font_variable;
+}

@@ -1,7 +1,10 @@
 
+import { useNavigate } from 'react-router';
+import PrimaryButton from '../../../../shared/UIKit/Buttons/PrimaryButton';
 import styles from '../header.styles.module.scss'
 
 const NavbarWithAuth = () => {
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         console.log('logout');
@@ -11,12 +14,7 @@ const NavbarWithAuth = () => {
     return (
         <ul className={styles.navUl}>
             <li className={styles.navItem}>
-                <button
-                    className={styles.navLink}
-                    id='logout-link'
-                    onClick={handleLogout}>
-                    Logout
-                </button>
+                <PrimaryButton content='Logout' onClick={() => { handleLogout(); navigate('/') }} />
             </li>
         </ul>
     )

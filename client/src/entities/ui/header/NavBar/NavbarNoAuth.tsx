@@ -1,18 +1,18 @@
+import { useNavigate } from 'react-router'
+import PrimaryButton from '../../../../shared/UIKit/Buttons/PrimaryButton'
 import styles from '../header.styles.module.scss'
 
 
 const NavbarNoAuth = () => {
+    const navigate = useNavigate()
+
     return (
         <ul className={styles.navUl}>
             <li className={styles.navItem}>
-                <button className={styles.navLink} id='login-link'>
-                    Login
-                </button>
+                <PrimaryButton content='Login' onClick={() => navigate('/login')} />
             </li>
-            <li className={styles.navLink}>
-                <button className={styles.navLink} id='reg-link'>
-                    Register
-                </button>
+            <li className={styles.navItem}>
+                <PrimaryButton content='Register' onClick={() => navigate('/register')} />
             </li>
         </ul>
     )
