@@ -13,7 +13,7 @@ const editUserRouter = require('./routes/api/users/user.edit.routes');
 const app = express();
 
 // условное формирование порта
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 3002;
 
 // конфигурация приложения
 serverConfig(app);

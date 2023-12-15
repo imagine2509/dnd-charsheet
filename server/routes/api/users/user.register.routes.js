@@ -2,24 +2,20 @@ require('dotenv').config();
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { body, validationResult } = require('express-validator');
-const { Token, User } = require('../../db/models');
+const { body } = require('express-validator');
+const validate = require('../../../middleware/spellCheck'); // мидлвара валидатор
+const { Token, User } = require('../../../db/models');
 
 router.post(
   '/register',
-  body('email').isEmail(),
-  body('password').isLength({ min: 6 }),
+  validate([
+    // отправляем почту на валидацию
+    body('email').isEmail().withMessage('Не верный формат адреса электронной  почты'),
+    // отправляем пароль на валидацию
+    body('password').isLength({ min: 6 }).withMessage('Пароль должен содержать минимум 6 символов'),
+  ]),
   async (req, res) => {
-    const errors = validationResult(req);
     const { email, password } = req.body;
-    const a = 2;
-
-    if (!errors.isEmpty()) {
-      res
-        .status(422)
-        .json({ message: 'Недопустимые данные', errors: errors.array() }); // 422 Unprocessable entity
-      return;
-    }
     try {
       const userExists = await User.findOne({ where: { email } });
       if (userExists) {
@@ -65,7 +61,6 @@ router.post(
         message: `Пользователь с email = ${email} зарегистрирован`,
       });
     } catch (e) {
-      console.log(e.message);
       res.status(500).send(e.message);
     }
   },

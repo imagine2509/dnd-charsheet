@@ -2,7 +2,7 @@ require('dotenv').config();
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { Token, User } = require('../../db/models');
+const { Token, User } = require('../../../db/models');
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;

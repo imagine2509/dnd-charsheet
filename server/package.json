@@ -11,7 +11,9 @@
         "db-seed-undo": "npx sequelize db:seed:undo:all",
         "db-create": "npx sequelize db:create",
         "db-drop": "npx sequelize db:drop",
-        "db-migrate": "npx sequelize db:migrate:undo:all && npx sequelize"
+        "db-migrate": "npx sequelize db:migrate:undo:all && npx sequelize",
+        "db-user": "npx sequelize-cli model:generate --name User --attributes email:string,password:string,login:string,firstName:string,lastName:string,activationString:string,isAdmin:boolean",
+        "db-token": "npx sequelize-cli model:generate --name Token --attributes userId:integer,refreshToken:string"
     },
     "keywords": [],
     "author": "",

@@ -1,6 +1,6 @@
 require('dotenv').config();
 const router = require('express').Router();
-const { Token, User } = require('../../db/models');
+const { Token, User } = require('../../../db/models');
 
 router.post('/logout', async (req, res) => {
   try {

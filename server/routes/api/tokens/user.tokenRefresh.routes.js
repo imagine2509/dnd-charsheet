@@ -1,7 +1,7 @@
 require('dotenv').config();
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
-const { Token, User } = require('../../db/models');
+const { Token, User } = require('../../../db/models');
 
 router.get('token/refresh', async (req, res) => {
   const { refreshToken } = req.cookies;
