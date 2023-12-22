@@ -8,14 +8,7 @@ const { Token, User } = require('../../../db/models');
 
 router.post(
   '/register',
-  validate(
-    // [
-    // отправляем почту на валидацию
-    // body('email').isEmail().withMessage('Не верный формат адреса электронной  почты'),
-    // отправляем пароль на валидацию
-    // body('password').isLength({ min: 6 }).withMessage('Пароль должен содержать минимум 6 символов'),
-  // ]
-  ),
+  validate(),
   async (req, res) => {
     const { email, password } = req.body;
     try {
